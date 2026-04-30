@@ -2,14 +2,25 @@ name: First Workflow
 on: [push]
 
 jobs:
-  build:
+  run-shell-commands:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
+      - name: echo a string
+        run: echo "Hello World"
+      - name: Multiline Command
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
           node -v
           npm -v
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: View SW Version
+        run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: run-shell-commands
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"
+      - name: Error Step
+        run: doesnotexits
