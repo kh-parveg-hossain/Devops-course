@@ -12,6 +12,7 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REPOSITORY
           echo $GITHUB_REF
+          echo $GITHUB_SHA
   run-shell-commands-windows:
     runs-on: windows-latest
     steps:
