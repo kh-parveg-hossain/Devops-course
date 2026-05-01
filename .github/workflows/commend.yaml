@@ -8,7 +8,7 @@ jobs:
       - name: display working directory and list files
         run: |
           pwd
-          ls -a
+          ls 
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REPOSITORY
           echo $GITHUB_REF
@@ -18,7 +18,7 @@ jobs:
       - name: display working directory and list files
         run: |
           pwd
-          ls -a
+          ls 
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REPOSITORY
           echo $GITHUB_REF
